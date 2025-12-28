@@ -42,6 +42,7 @@ LiquidCrystal_I2C lcd(LCD_ADDR, 20, 4);
 MCP4261 pot1(P1_CS, 255, &SPI);
 MCP4261 pot2(P2_CS, 255, &SPI);
 
+// scan for I2C devices
 void I2C_Scan(void)
 {
   byte error, address;
@@ -76,18 +77,21 @@ void I2C_Scan(void)
   }
 }
 
+// writes SPI
 void spiSendBuffer(const uint8_t *buf, size_t len) {
   for (size_t i = 0; i < len; i++) {
     SPI.transfer(buf[i]);
   }
 }
 
+// reads SPI
 void spiReadBuffer(uint8_t *buf, size_t len) {
   for (size_t i = 0; i < len; i++) {
     buf[i] = SPI.transfer(0x00);
   }
 }
 
+// detect ports with modules connected
 String Module_scan() {
   static const uint8_t detectCmd[] = { 'D','E','T','E','C','T' };
   uint8_t reply[4];
@@ -127,6 +131,7 @@ String Module_scan() {
   return output;
 }
 
+// writes a debug message to UART and to the LCD during boot
 void print(String msg, bool printToLCD_Y3) {
   Serial.println(msg);
   if (!printToLCD_Y3) { return; }
@@ -136,6 +141,7 @@ void print(String msg, bool printToLCD_Y3) {
   lcd.print(msg);
 }
 
+// write/read test for the MCP4261, used to confirm the board is fine
 bool RW_MCP4261(MCP4261 pot, int wiper) {
   bool success = false;
   pot.setValue(wiper, 123);
@@ -292,7 +298,7 @@ void setup(void) {
   print("BootOK LoadOS", true);
 }
 
-
+// renders the initial menu
 void RenderMainMenu(String Mods) {
   lcd.clear();
   lcd.setCursor(0, 0);
@@ -306,6 +312,8 @@ void RenderMainMenu(String Mods) {
   lcd.print(" BLE ");
 }
 
+
+// draws the arrow to a position on the screen and cleans the old one
 void RenderArrow(int X, int Y) {
   RenderedArrow = true;
   lcd.setCursor(PrevArrowX, PrevArrowY);
