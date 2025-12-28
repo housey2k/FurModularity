@@ -6,4 +6,4 @@ It has 5 input/output connectors for external modules, these modules can be anyt
 
 It also has a two input and two output audio mixer, via software you can route inputs 1, 2 or both to outputs 1, 2 or both, the routing is done by two 74VHC4066M Analog Switch ICs, one for each input channel, and you can also change the input volumes, that is done by two MCP4261 ICs, one for each channel too.
 
-![Board image](/PCB_Final.jpg)
+![Board image](/Images/PCB_Final.jpg)
