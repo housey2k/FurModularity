@@ -9,5 +9,5 @@ It also has a two input and two output audio mixer, via software you can route i
 I originally built this project as a curious kid exploring CAD software, and I always liked electronics, I wanted to create my own stuff, but I never had the money for it. Now with more experience I restarted this project from scratch hoping to get funds for it
 
 ![Board image](/Images/PCB_Final.jpg)
-![Case](/Images/Case_Top.jpg)
-![Case2](/Images/Case_45.jpg)
+![Case](/Images/Case_Top.png)
+![Case2](/Images/Case_45.png)
