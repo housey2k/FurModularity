@@ -6,8 +6,22 @@ It has 5 input/output connectors for external modules, these modules can be anyt
 
 It also has a two input and two output audio mixer, via software you can route inputs 1, 2 or both to outputs 1, 2 or both, the routing is done by two 74VHC4066M Analog Switch ICs, one for each input channel, and you can also change the input volumes, that is done by two MCP4261 ICs, one for each channel too.
 
-I originally built this project as a curious kid exploring CAD software, and I always liked electronics, I wanted to create my own stuff, but I never had the money for it. Now with more experience I restarted this project from scratch hoping to get funds for it
+I originally built this project as a curious kid exploring CAD software, and I always liked electronics, I wanted to create my own stuff, but I never had the money for it. Now with more experience I restarted this project from scratch hoping to get funds for it.
 
-![Board image](/Images/PCB_Final.jpg)
-![Case](/Images/Case_Top.png)
-![Case2](/Images/Case_45.png)
+This is how the PCB looks like, the back side has no components, thus simplifying assembly:
+![Board image](/Images/PCB/PCB_Final_3D.jpg)
+![Board routing](/Images/PCB/PCB_CAD.png)
+
+This is how the case looks like:
+![Case](/Images/Case/Case_Top.png)
+![Case2](/Images/Case/Case_45.png)
+
+And finally, here is the schematics:
+This is the power circuit, it handles battery discharging, PowerPath, and generating 5V and 3.3V rails
+![Power circuit](/Images/Schematic/Pwr.png)
+
+This is the digital circuit, it shows connections from the MCU to other components in the board
+![Digital circuit](/Images/Schematic/MCU.png)
+
+This is the audio circuit, it handles audio routing and volume control, everything is controlled by the MCU
+![Audio circuit](/Images/Schematic/Audio.png)
