@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "EasyEDA-Project")(type "KiCad")(uri "$(KIPRJMOD)/EasyEDA-Project.pretty")(options "")(descr ""))
+)
