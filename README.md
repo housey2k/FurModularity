@@ -17,6 +17,8 @@ This is how the case looks like:
 
 ![Case](/Images/Case/Case_Top.png)
 ![Case2](/Images/Case/Case_45.png)
+![Case3](/Images/Case/Case_Conn.png)
+![Case4](/Images/Case/Case_ConnMod.png)
 
 And finally, here is the schematics:
 This is the power circuit, it handles battery discharging, PowerPath, and generating 5V and 3.3V rails
